@@ -191,13 +191,13 @@ namespace SimpleTotalsDemo
                     if (appliedProduct["Type"].ToString() == "Seed")
                     {
                         #region Handle Seed
-                        CropVariety cropVariety = null;
+                        CropVarietyProduct cropVariety = null;
                         var products = export.Catalog.Products.Where(x => (x.Description == appliedProduct["Product"].ToString())).ToList();
                         if (products.Count > 0)
-                            cropVariety = products[0] as CropVariety;
+                            cropVariety = products[0] as CropVarietyProduct;
                         else
                         {
-                            cropVariety = new CropVariety();
+                            cropVariety = new CropVarietyProduct();
                             ourId = new UniqueId();
                             ourId.Id = appliedProduct["ProductId"]["Id"].ToString();
                             ourId.IdType = IdTypeEnum.UUID;
@@ -249,13 +249,13 @@ namespace SimpleTotalsDemo
                     else if (appliedProduct["Type"].ToString() == "Fertilizer")
                     {
                         #region Handle Fertilizer
-                        FertilizerProduct cropNutrition = null;
+                        CropNutritionProduct cropNutrition = null;
                         var products = export.Catalog.Products.Where(x => (x.Description == appliedProduct["Product"].ToString())).ToList();
                         if (products.Count > 0)
-                            cropNutrition = products[0] as FertilizerProduct;
+                            cropNutrition = products[0] as CropNutritionProduct;
                         else
                         {
-                            cropNutrition = new FertilizerProduct();
+                            cropNutrition = new CropNutritionProduct();
                             ourId = new UniqueId();
                             ourId.Id = appliedProduct["ProductId"]["Id"].ToString();
                             ourId.IdType = IdTypeEnum.UUID;
